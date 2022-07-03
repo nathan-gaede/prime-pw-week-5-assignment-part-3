@@ -13,9 +13,9 @@ console.log(collection);
 
 /**
  * 
- * @param {string} title 
- * @param {string} artist 
- * @param {string} yearPublished 
+ * @param {*} title 
+ * @param {*} artist 
+ * @param {*} yearPublished 
  * @returns 
  */
 
@@ -41,6 +41,28 @@ console.log(addToCollection('The Wall', 'Pink Floyd', '1979'));
 console.log(addToCollection('Master of Puppets', 'Metallica', '1986'));
 //Console.log the collection array.
 console.log(collection);
+
+//Create function called showCollection. This function should take in an 
+//array parameter.
+
+/**
+ * 
+ * @param {*} array 
+ */
+
+function showCollection( array, ) {
+//Console.log the number of items in the array.
+    console.log(array.length)
+//Loop over the array and console.log each album's information formatted like
+//`TITLE by ARTIST, published in YEAR.
+    for ( i=0; i < array.length; i +=1 ) {
+        
+console.log(array[i].title, 'by',array[i].artist, 'published in',array[i].yearPublished);
+        
+}
+   return; 
+}
+showCollection(collection);
 
 
 
