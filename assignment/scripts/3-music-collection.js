@@ -56,13 +56,62 @@ function showCollection( array, ) {
 //Loop over the array and console.log each album's information formatted like
 //`TITLE by ARTIST, published in YEAR.
     for ( i=0; i < array.length; i +=1 ) {
-        
+//Added [i] after array to allow each album's information to be console.logged
+//Without the [i], results were undefined as array.title did not "dig down"
+//far enough to access albums that reside in collection array.       
 console.log(array[i].title, 'by',array[i].artist, 'published in',array[i].yearPublished);
         
 }
    return; 
 }
+//Test the showCollection function.
 showCollection(collection);
+
+//Add a function named findByArtist that takes in a string parameter.
+//Create an array to hold any results, empty to start.
+//Loop through the `collection` and add any objects with a matching artist to the array.
+//Return the array with the matching results. If no results are found, return an empty array.
+
+//Set parameters
+/**
+ * 
+ * @param {string} artistInput 
+ * @returns artistArray
+ */
+
+ 
+function findByArtist( artistInput, ) {
+    let artistArray = []
+    //console.log(artistInput);
+    //Created for loop and then tried to get a for of loop to work further down the code.
+    // for ( let i = 0; i < collection.length; i +=1) {
+    //     if (artistInput === collection[i].artist) {
+            
+    
+    
+    for ( let album of collection ) {
+        if (artistInput === album.artist) {
+        artistArray.push(album)
+        }
+    }
+    
+    
+    
+    // console.log(artistArray)
+    return artistArray;
+}
+
+//Testing for a single match
+console.log(findByArtist( 'Alice in Chains',))
+//Testing for no match and empty array
+console.log(findByArtist( 'Rage Against the Machine',))
+//Testing one match
+console.log(findByArtist( 'Metallica',))
+//Accessing the collection table.
+console.table(collection)
+//Testing to access the artists in the collection.
+console.log(collection[0].artist)
+
 
 
 
