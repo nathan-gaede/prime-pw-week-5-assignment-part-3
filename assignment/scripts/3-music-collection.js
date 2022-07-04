@@ -112,6 +112,12 @@ console.table(collection)
 //Testing to access the artists in the collection.
 console.log(collection[0].artist)
 
+//Create a function called "search" that takes in an input parameter for a 
+//search criteria object. The object should have properties similar to 
+//{ artist: 'Ray Charles', year: 1957 }
+
+
+
 
 
 
